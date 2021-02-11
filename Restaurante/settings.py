@@ -27,7 +27,7 @@ SECRET_KEY = 'htgscwc@)h208bf2u!r9(gxzbgu3@k%!#@y$+9w&un&!6_x+14'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['restaurante-facturacion-juan.herokuapp.com']
 
 
 # Application definition
