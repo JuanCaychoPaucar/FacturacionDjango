@@ -1,6 +1,7 @@
 import requests
 from datetime import datetime
 from .models import CabeceraComandaModel, ComprobanteModel
+import os
 
 def emitirComprobante(
         tipo_comprobante,
@@ -35,7 +36,7 @@ def emitirComprobante(
             base_url_apiperu = base_url_apiperu + "dni/{}".format(cliente_documento)
 
         headers = {
-            "Authorization": "Bearer 985a6c5f7b0529d6efb0968fabe0fd6ffe81136bb67cc0c4fff937fdbf02880d",
+            "Authorization": "Bearer" + os.environ['API_PERU'],
             "Content-Type": "application/json"
         }
 
@@ -148,7 +149,7 @@ def emitirComprobante(
     #! la documentacion de nubefact no solicita palabra Bearer
     # https://docs.google.com/document/d/1QWWSILBbjd4MDkJl7vCkL2RZvkPh0IC7Wa67BvoYIhA/edit#heading=h.wfmgrg63esv2
     headers_nubefact = {
-        "Authorization": "3b643f32df9d40f089ff1685774d41206f8b633d814646969d29da362afa527b",
+        "Authorization": os.environ['NUBEFACT'],
         "Content-Type": "application/json"
     }
 
